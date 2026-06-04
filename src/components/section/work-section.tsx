@@ -33,10 +33,10 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 export default function WorkSection() {
   return (
     <Accordion type="single" collapsible className="w-full grid gap-6">
-      {DATA.work.map((work) => (
+      {DATA.work.map((work, index) => (
         <AccordionItem
-          key={work.company}
-          value={work.company}
+          key={`${work.company}-${index}`}
+          value={`${work.company}-${index}`}
           className="w-full border-b-0 grid gap-2"
         >
           <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
@@ -52,14 +52,14 @@ export default function WorkSection() {
                           "absolute h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 transition-all duration-300 ease-out",
                           "translate-x-0 opacity-0",
                           "group-hover:translate-x-1 group-hover:opacity-100",
-                          "group-data-[state=open]:opacity-0 group-data-[state=open]:translate-x-0"
+                          "group-data-[state=open]:opacity-0 group-data-[state=open]:translate-x-0",
                         )}
                       />
                       <ChevronDown
                         className={cn(
                           "absolute h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 transition-all duration-200",
                           "opacity-0 rotate-0",
-                          "group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-180"
+                          "group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-180",
                         )}
                       />
                     </span>
@@ -84,4 +84,3 @@ export default function WorkSection() {
     </Accordion>
   );
 }
-

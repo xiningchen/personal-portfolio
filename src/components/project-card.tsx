@@ -27,7 +27,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
 
 interface Props {
   title: string;
-  href?: string;
+  slug?: string;
   description: string;
   dates: string;
   tags: readonly string[];
@@ -44,7 +44,7 @@ interface Props {
 
 export function ProjectCard({
   title,
-  href,
+  slug,
   description,
   dates,
   tags,
@@ -58,12 +58,12 @@ export function ProjectCard({
     <div
       className={cn(
         "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
-        className
+        className,
       )}
     >
       <div className="relative shrink-0">
         <Link
-          href={href || "#"}
+          href={slug ? `/projects/${slug}` : "#"}
           target="_blank"
           rel="noopener noreferrer"
           className="block"
@@ -112,7 +112,7 @@ export function ProjectCard({
             <time className="text-xs text-muted-foreground">{dates}</time>
           </div>
           <Link
-            href={href || "#"}
+            href={slug || "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"

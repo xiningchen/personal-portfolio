@@ -1,211 +1,152 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
-import { ReactLight } from "@/components/ui/svgs/reactLight";
-import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
+import { HomeIcon } from "lucide-react";
 import { Typescript } from "@/components/ui/svgs/typescript";
-import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Python } from "@/components/ui/svgs/python";
-import { Golang } from "@/components/ui/svgs/golang";
-import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { Docker } from "@/components/ui/svgs/docker";
-import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { Java } from "@/components/ui/svgs/java";
 import { Csharp } from "@/components/ui/svgs/csharp";
+import { ReactLight } from "@/components/ui/svgs/reactLight";
+import { Angular } from "@/components/ui/svgs/angular";
+import { Cpp } from "@/components/ui/svgs/cpp";
+import { Java } from "@/components/ui/svgs/java";
+import { Sql } from "@/components/ui/svgs/sql";
+import { Azure } from "@/components/ui/svgs/azure";
 
 export const DATA = {
-  name: "Dillion Verma",
-  initials: "DV",
+  name: "Xining Schmidt-Chen",
+  initials: "XC",
   url: "https://dillion.io",
-  location: "San Francisco, CA",
+  location: "Portland, OR",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+    "Full-stack Web Application Developer. I love learning and I have a fluffy puppy (Cornflake) and a fluffy cat (Ruby).",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
-  avatarUrl: "/me.png",
-  skills: [
-    { name: "React", icon: ReactLight },
-    { name: "Next.js", icon: NextjsIconDark },
+    "I got my master's degree in Computer Science in 2024 with a thesis on [detecting brain vulnerability using network neuroscience](https://hdl.handle.net/1880/120335). During my master's, I created a [mini python library](https://github.com/xiningchen/Towlson-Group-Code) for efficiently analyzing large brain images. Since graduating, I've been working at [Tandem Studios](https://www.tandemstudios.ca/) as a full-stack web application developer.",
+  avatarUrl: "/me.jpg",
+  primarySkills: [
+    { name: "C#", icon: Csharp },
+    { name: "SQL", icon: Sql },
+    { name: "Angular", icon: Angular },
+    { name: "Azure", icon: Azure },
     { name: "Typescript", icon: Typescript },
-    { name: "Node.js", icon: Nodejs },
+  ],
+  otherSkills: [
     { name: "Python", icon: Python },
-    { name: "Go", icon: Golang },
-    { name: "Postgres", icon: Postgresql },
-    { name: "Docker", icon: Docker },
-    { name: "Kubernetes", icon: Kubernetes },
+    { name: "C++", icon: Cpp },
     { name: "Java", icon: Java },
-    { name: "C++", icon: Csharp },
   ],
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "chenxshining@gmail.com",
+    tel: "+18254491687",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://dub.sh/dillion-github",
+        url: "https://github.com/xiningchen",
         icon: Icons.github,
         navbar: true,
       },
-
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://www.linkedin.com/in/xining-chen/",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-      X: {
-        name: "X",
-        url: "https://dub.sh/dillion-twitter",
-        icon: Icons.x,
-
-        navbar: true,
-      },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
-        navbar: true,
-      },
-      email: {
+      Email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:chenxshining@gmail.com",
         icon: Icons.email,
-
-        navbar: false,
+        navbar: true,
       },
     },
   },
-
   work: [
     {
-      company: "Atomic Finance",
-      href: "https://atomic.finance",
+      company: "Tandem Studios",
+      href: "https://www.tandemstudios.ca/",
       badges: [],
       location: "Remote",
-      title: "Bitcoin Protocol Engineer",
-      logoUrl: "/atomic.png",
-      start: "May 2021",
-      end: "Oct 2022",
+      title: "Full-stack Developer",
+      logoUrl: "/work_in_tandem_logo.jpg",
+      start: "October 2023",
+      end: "Present",
       description:
-        "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+        "At Tandem Studios, I develop and maintain full-stack web applications using ASP.NET, Angular, Razor Pages, EF Core, SQL Server, and Azure. I lead the development of a legacy system from architecture through production deployment while also building new features for a mature enterprise application, giving me experience in both end-to-end product development and enhancing complex existing systems.",
     },
     {
-      company: "Shopify",
+      company: "Dynamik",
       badges: [],
-      href: "https://shopify.com",
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/shopify.svg",
-      start: "January 2021",
-      end: "April 2021",
+      href: "https://dynamik.fi/en/",
+      location: "Finland",
+      title: "Summer Intern",
+      logoUrl: "/dynamik_logo.jpg",
+      start: "June 2022",
+      end: "September 2022",
       description:
-        "Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+        "At Dynamik, I collaborated on the development of a supply chain optimization platform, rapidly learning ASP.NET while building REST APIs, data pipelines, and database-driven backend services that automated operational workflows.",
     },
     {
-      company: "Nvidia",
-      href: "https://nvidia.com/",
+      company: "University of Calgary",
       badges: [],
-      location: "Santa Clara, CA",
-      title: "Software Engineer",
-      logoUrl: "/nvidia.png",
-      start: "January 2020",
-      end: "April 2020",
+      href: "",
+      location: "Calgary, Canada",
+      title: "Graduate Research Assistant",
+      logoUrl: "/uoc_logo.webp",
+      start: "June 2022",
+      end: "September 2022",
       description:
-        "Architected and wrote the entire MVP of the GeForce Now Cloud Gaming internal admin and A/B testing dashboard using React, Redux, TypeScript, and Python.",
+        "As part of my thesis-based Master’s degree in Computer Science, I applied computational methods and network neuroscience techniques to analyze experimental neuroimaging data. My research focused on developing Python-based data processing and analysis pipelines to study brain connectivity across different physiological and clinical conditions, utilizing scientific computing, statistical analysis, and data visualization tools. In addition to conducting research, I founded and led the development of a GitHub-based software infrastructure for a newly established research lab, creating standardized and reproducible analysis workflows while collaborating closely with interdisciplinary researchers to translate scientific objectives into computational solutions.",
     },
     {
-      company: "Splunk",
-      href: "https://splunk.com",
+      company: "University of Calgary",
       badges: [],
-      location: "San Jose, CA",
-      title: "Software Engineer",
-      logoUrl: "/splunk.svg",
-      start: "January 2019",
-      end: "April 2019",
+      href: "",
+      location: "Calgary, Canada",
+      title: "Operating Systems Teaching Assistant",
+      logoUrl: "/uoc_logo.webp",
+      start: "June 2022",
+      end: "September 2022",
       description:
-        "Co-developed a prototype iOS app with another intern in Swift for the new Splunk Phantom security orchestration product (later publicly demoed and launched at .conf annual conference in Las Vegas). Implemented a realtime service for the iOS app in Django (Python) and C++; serialized data using protobufs transmitted over gRPC resulting in an approximate 500% increase in data throughput.",
-    },
-    {
-      company: "Lime",
-      href: "https://li.me/",
-      badges: [],
-      location: "San Francisco, CA",
-      title: "Software Engineer",
-      logoUrl: "/lime.svg",
-      start: "January 2018",
-      end: "April 2018",
-      description:
-        "Proposed and implemented an internal ruby API for sending/receiving commands to scooters over LTE networks. Developed a fully automated bike firmware update system to handle asynchronous firmware updates of over 100,000+ scooters worldwide, and provide progress reports in real-time using React, Ruby on Rails, PostgreSQL and AWS EC2 saving hundreds of developer hours.",
-    },
-    {
-      company: "Mitre Media",
-      href: "https://mitremedia.com/",
-      badges: [],
-      location: "Toronto, ON",
-      title: "Software Engineer",
-      logoUrl: "/mitremedia.png",
-      start: "May 2017",
-      end: "August 2017",
-      description:
-        "Designed and implemented a robust password encryption and browser cookie storage system in Ruby on Rails. Leveraged the Yahoo finance API to develop the dividend.com equity screener",
+        "Taught data structures and time complexity to improve time and memory efficiency. Taught remote connection using SSH and Vim. Wrote and debugged multi-threaded C++ code for optimizing program runtime.",
     },
   ],
   education: [
     {
-      school: "Buildspace",
-      href: "https://buildspace.so",
-      degree: "s3, s4, sf1, s5",
-      logoUrl: "/buildspace.jpg",
-      start: "2023",
+      school: "University of Calgary",
+      href: "https://www.ucalgary.ca/",
+      degree: "M.S. in Computer Science",
+      logoUrl: "/uoc_logo.webp",
+      start: "2020",
       end: "2024",
     },
     {
-      school: "University of Waterloo",
-      href: "https://uwaterloo.ca",
-      degree: "Bachelor's Degree of Computer Science (BCS)",
-      logoUrl: "/waterloo.png",
-      start: "2016",
-      end: "2021",
+      school: "University of Calgary",
+      href: "https://www.ucalgary.ca/",
+      degree: "B.S. in Computer Science",
+      logoUrl: "/uoc_logo.webp",
+      start: "2013",
+      end: "2020",
     },
     {
-      school: "Wilfrid Laurier University",
-      href: "https://wlu.ca",
-      degree: "Bachelor's Degree of Business Administration (BBA)",
-      logoUrl: "/laurier.png",
-      start: "2016",
-      end: "2021",
-    },
-    {
-      school: "International Baccalaureate",
-      href: "https://ibo.org",
-      degree: "IB Diploma",
-      logoUrl: "/ib.png",
-      start: "2012",
-      end: "2016",
+      school: "University of Calgary",
+      href: "https://www.ucalgary.ca/",
+      degree: "B.S. in Physics (Honors)",
+      logoUrl: "/uoc_logo.webp",
+      start: "2013",
+      end: "2020",
     },
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
+      title: "Test",
+      slug: "project-1",
       dates: "Jan 2024 - Feb 2024",
       active: true,
-      description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+      description: "description test",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
+        "ASP.NET (C#)",
+        "Angular",
+        "Azure SQL Database",
+        "Angular Material",
         "Stripe",
-        "Shadcn UI",
-        "Magic UI",
       ],
       links: [
         {
@@ -220,7 +161,7 @@ export const DATA = {
     },
     {
       title: "Magic UI",
-      href: "https://magicui.design",
+      slug: "project-2",
       dates: "June 2023 - Present",
       active: true,
       description:
@@ -249,68 +190,6 @@ export const DATA = {
       ],
       image: "",
       video: "https://cdn.magicui.design/bento-grid.mp4",
-    },
-    {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
-      active: true,
-      description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
-    },
-    {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
   ],
   hackathons: [
