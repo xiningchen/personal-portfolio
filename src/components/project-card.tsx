@@ -57,16 +57,14 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
+        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 hover:ring-muted transition-all duration-200",
         className,
       )}
     >
       <div className="relative shrink-0">
         <Link
           href={slug ? `/projects/${slug}` : "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
+          className="block relative group"
         >
           {video ? (
             <video
@@ -82,6 +80,11 @@ export function ProjectCard({
           ) : (
             <div className="w-full h-48 bg-muted" />
           )}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+            <span className="text-white text-sm font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              View Project →
+            </span>
+          </div>
         </Link>
         {links && links.length > 0 && (
           <div className="absolute top-2 right-2 flex flex-wrap gap-2">
@@ -108,10 +111,15 @@ export function ProjectCard({
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-col gap-1">
-            <h3 className="font-semibold">{title}</h3>
+            <Link
+              href={slug ? `/projects/${slug}` : "#"}
+              className="font-semibold hover:underline"
+            >
+              {title}
+            </Link>
             <time className="text-xs text-muted-foreground">{dates}</time>
           </div>
-          <Link
+          {/* <Link
             href={slug || "#"}
             target="_blank"
             rel="noopener noreferrer"
@@ -119,7 +127,7 @@ export function ProjectCard({
             aria-label={`Open ${title}`}
           >
             <ArrowUpRight className="h-4 w-4" aria-hidden />
-          </Link>
+          </Link> */}
         </div>
         <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
           <Markdown>{description}</Markdown>

@@ -3,7 +3,6 @@ import { HomeIcon } from "lucide-react";
 import { Typescript } from "@/components/ui/svgs/typescript";
 import { Python } from "@/components/ui/svgs/python";
 import { Csharp } from "@/components/ui/svgs/csharp";
-import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { Angular } from "@/components/ui/svgs/angular";
 import { Cpp } from "@/components/ui/svgs/cpp";
 import { Java } from "@/components/ui/svgs/java";
@@ -22,7 +21,7 @@ export const DATA = {
     "I got my master's degree in Computer Science in 2024 with a thesis on [detecting brain vulnerability using network neuroscience](https://hdl.handle.net/1880/120335). During my master's, I created a [mini python library](https://github.com/xiningchen/Towlson-Group-Code) for efficiently analyzing large brain images. Since graduating, I've been working at [Tandem Studios](https://www.tandemstudios.ca/) as a full-stack web application developer.",
   avatarUrl: "/me.jpg",
   primarySkills: [
-    { name: "C#", icon: Csharp },
+    { name: "ASP.NET (C#)", icon: Csharp },
     { name: "SQL", icon: Sql },
     { name: "Angular", icon: Angular },
     { name: "Azure", icon: Azure },
@@ -90,8 +89,8 @@ export const DATA = {
       location: "Calgary, Canada",
       title: "Graduate Research Assistant",
       logoUrl: "/uoc_logo.webp",
-      start: "June 2022",
-      end: "September 2022",
+      start: "October 2021",
+      end: "December 2024",
       description:
         "As part of my thesis-based Master’s degree in Computer Science, I applied computational methods and network neuroscience techniques to analyze experimental neuroimaging data. My research focused on developing Python-based data processing and analysis pipelines to study brain connectivity across different physiological and clinical conditions, utilizing scientific computing, statistical analysis, and data visualization tools. In addition to conducting research, I founded and led the development of a GitHub-based software infrastructure for a newly established research lab, creating standardized and reproducible analysis workflows while collaborating closely with interdisciplinary researchers to translate scientific objectives into computational solutions.",
     },
@@ -102,8 +101,8 @@ export const DATA = {
       location: "Calgary, Canada",
       title: "Operating Systems Teaching Assistant",
       logoUrl: "/uoc_logo.webp",
-      start: "June 2022",
-      end: "September 2022",
+      start: "September 2020",
+      end: "April 2023",
       description:
         "Taught data structures and time complexity to improve time and memory efficiency. Taught remote connection using SSH and Vim. Wrote and debugged multi-threaded C++ code for optimizing program runtime.",
     },
@@ -136,32 +135,8 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Test",
-      slug: "project-1",
-      dates: "Jan 2024 - Feb 2024",
-      active: true,
-      description: "description test",
-      technologies: [
-        "ASP.NET (C#)",
-        "Angular",
-        "Azure SQL Database",
-        "Angular Material",
-        "Stripe",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-    },
-    {
-      title: "Magic UI",
-      slug: "project-2",
+      title: "Data Manager",
+      slug: "data-manager",
       dates: "June 2023 - Present",
       active: true,
       description:
@@ -177,19 +152,42 @@ export const DATA = {
         "Magic UI",
       ],
       links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
-        },
+        // {
+        //   type: "Website",
+        //   href: "https://magicui.design",
+        //   icon: <Icons.globe className="size-3" />,
+        // },
+        // {
+        //   type: "Source",
+        //   href: "https://github.com/magicuidesign/magicui",
+        //   icon: <Icons.github className="size-3" />,
+        // },
       ],
       image: "",
       video: "https://cdn.magicui.design/bento-grid.mp4",
+    },
+    {
+      title: "Changing Tides Psychiatry",
+      slug: "changing-tides",
+      dates: "Jan 2024 - Feb 2024",
+      active: true,
+      description: "description test",
+      technologies: [
+        "ASP.NET (C#)",
+        "Angular",
+        "Azure SQL Database",
+        "Angular Material",
+        "Stripe",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.changingtidespsychiatry.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/project-assets/changing-tides-psychiatry-website/ctp-mockup-2-scaled.webp",
+      video: "",
     },
   ],
   hackathons: [

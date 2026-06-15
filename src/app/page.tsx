@@ -9,7 +9,7 @@ import ContactSection from "@/components/section/contact-section";
 import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -42,7 +42,7 @@ export default function Page() {
         </div>
       </section>
       <section id="about">
-        <div className="flex min-h-0 flex-col gap-y-4">
+        <div className="flex min-h-0 flex-col gap-y-4 mb-4">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <h2 className="text-xl font-bold">About</h2>
           </BlurFade>
@@ -52,6 +52,16 @@ export default function Page() {
             </div>
           </BlurFade>
         </div>
+        <div className="flex justify-end">
+          <a href="/resume.pdf"
+            download="Xining Schmidt-Chen Resume.pdf"
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-5 h-10 text-sm font-medium shadow-md hover:shadow-lg hover:bg-primary/20 transition-all duration-200"
+          >
+            <Download className="size-4" />
+            Resume
+          </a>
+        </div>
+
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-6">
