@@ -10,6 +10,7 @@ const projects = defineCollection({
   directory: "src/content/projects",
   include: "**/*.mdx",
   schema: z.object({
+    active: z.boolean(),
     title: z.string(),
     slug: z.string(),
     index: z.number(),

@@ -4,12 +4,12 @@ import { Typescript } from "@/components/ui/svgs/typescript";
 import { Python } from "@/components/ui/svgs/python";
 import { Csharp } from "@/components/ui/svgs/csharp";
 import { Angular } from "@/components/ui/svgs/angular";
-import { Cpp } from "@/components/ui/svgs/cpp";
-import { Java } from "@/components/ui/svgs/java";
 import { Sql } from "@/components/ui/svgs/sql";
 import { Azure } from "@/components/ui/svgs/azure";
-import { NextjsLogoLight } from "@/components/ui/svgs/nextjsLogoLight";
-import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
+import { Git } from "@/components/ui/svgs/git";
+import { EntityFramework } from "@/components/ui/svgs/entityFramework";
+import { DotNet } from "@/components/ui/svgs/dotnet";
+import { RxJS } from "@/components/ui/svgs/rxjs";
 
 export const DATA = {
   name: "Xining Schmidt-Chen",
@@ -22,19 +22,21 @@ export const DATA = {
   summary:
     "I got my master's degree in Computer Science in 2024 with a thesis on [detecting brain vulnerability using network neuroscience](https://hdl.handle.net/1880/120335). During my master's, I created a [mini python library](https://github.com/xiningchen/Towlson-Group-Code) for efficiently analyzing large brain images. Since graduating, I've been working at [Tandem Studios](https://www.tandemstudios.ca/) as a full-stack web application developer.",
   avatarUrl: "/me.jpg",
+  // Current job/active work stack.
   primarySkills: [
-    { name: "ASP.NET (C#)", icon: Csharp },
-    { name: "SQL", icon: Sql },
+    { name: "C#", icon: Csharp },
+    { name: "ASP.NET", icon: DotNet },
     { name: "Angular", icon: Angular },
+    { name: "TypeScript", icon: Typescript },
+    { name: "SQL", icon: Sql },
+    { name: "Entity Framework", icon: EntityFramework },
     { name: "Azure", icon: Azure },
-    { name: "JavaScript", icon: Typescript }, // FIX
+    { name: "Git", icon: Git },
   ],
+  // Comfortable enough to be productive w/ reasonable ramp-up time, open to using it professionally, actually like it enough to work with it.
   otherSkills: [
+    { name: "RxJS", icon: RxJS },
     { name: "Python", icon: Python },
-    { name: "C++", icon: Cpp },
-    { name: "Java", icon: Java },
-    { name: "Flutter", icon: Java }, // FIX
-    { name: "Next.js", icon: NextjsIconDark }, // FIX - switch between light and dark? How did original do it?
   ],
   navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
@@ -161,13 +163,12 @@ export const DATA = {
       title: "Liquid Software",
       slug: "liquid",
       dates: "Sep 2024 - Present",
-      active: true,
+      active: false,
       description:
         "Feature development on a large-scale ERP platform for a multi-year contracting engagement.",
       technologies: [
         "ASP.NET (C#)",
         "Razor Pages",
-        "jQuery",
         "JavaScript",
         "Azure SQL Database",
         "Telerik Kendo UI",
@@ -180,7 +181,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video: "",
     },
     {
       title: "Changing Tides Psychiatry",

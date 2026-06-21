@@ -62,30 +62,37 @@ export function ProjectCard({
       )}
     >
       <div className="relative shrink-0">
-        <Link
-          href={slug ? `/projects/${slug}` : "#"}
-          className="block relative group"
-        >
-          {video ? (
-            <video
-              src={video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-48 object-cover"
-            />
-          ) : image ? (
-            <ProjectImage src={image} alt={title} />
-          ) : (
-            <div className="w-full h-48 bg-muted" />
-          )}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
-            <span className="text-white text-sm font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              View Project →
-            </span>
+        {slug ? (
+          <Link href={`/projects/${slug}`} className="block relative group">
+            {video ? (
+              <video
+                src={video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-48 object-cover"
+              />
+            ) : image ? (
+              <ProjectImage src={image} alt={title} />
+            ) : (
+              <div className="w-full h-48 bg-muted" />
+            )}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+              <span className="text-white text-sm font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                View Project →
+              </span>
+            </div>
+          </Link>
+        ) : (
+          <div className="block relative">
+            {image ? (
+              <ProjectImage src={image} alt={title} />
+            ) : (
+              <div className="w-full h-48 bg-muted" />
+            )}
           </div>
-        </Link>
+        )}
         {links && links.length > 0 && (
           <div className="absolute top-2 right-2 flex flex-wrap gap-2">
             {links.map((link, idx) => (
@@ -111,12 +118,16 @@ export function ProjectCard({
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-col gap-1">
-            <Link
-              href={slug ? `/projects/${slug}` : "#"}
-              className="font-semibold hover:underline"
-            >
-              {title}
-            </Link>
+            {slug ? (
+              <Link
+                href={`/projects/${slug}`}
+                className="font-semibold hover:underline"
+              >
+                {title}
+              </Link>
+            ) : (
+              <span className="font-semibold">{title}</span>
+            )}
             <time className="text-xs text-muted-foreground">{dates}</time>
           </div>
           {/* <Link

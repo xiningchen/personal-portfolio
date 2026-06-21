@@ -5,8 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import ContactSection from "@/components/section/contact-section";
-import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight, Download } from "lucide-react";
@@ -56,9 +54,9 @@ export default function Page() {
           <a
             href="/resume.pdf"
             download="Xining Schmidt-Chen Resume.pdf"
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-5 h-10 text-sm font-medium shadow-md hover:shadow-lg hover:bg-primary/20 transition-all duration-200"
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 h-8 text-sm font-medium shadow-sm hover:shadow-md hover:bg-primary/20 transition-all duration-200"
           >
-            <Download className="size-4" />
+            <Download className="size-3.5" />
             Resume
           </a>
         </div>

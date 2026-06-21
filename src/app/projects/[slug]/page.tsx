@@ -6,10 +6,12 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { mdxComponents } from "@/mdx-components";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { ImageCarousel } from "@/components/image-carousel";
+import { EmblaCarousel } from "@/components/embla-carousel/embla-carousel";
 
 function getSortedProjects() {
-  return [...allProjects].sort((a, b) => a.index - b.index);
+  return [...allProjects]
+    .filter((p) => p.active)
+    .sort((a, b) => a.index - b.index);
 }
 
 // Generate slug route
@@ -165,10 +167,11 @@ export default async function ProjectPage({
       </div>
 
       {/* Image carousel */}
-      <div className="my-8">
-        {/* <ImageCarousel images={project.images ?? []} /> */}
-        <ImageCarousel />
-      </div>
+      {project.images && project.images.length > 0 && (
+        <div className="my-8">
+          <EmblaCarousel slides={project.images} />
+        </div>
+      )}
 
       {/* MDX body (process steps etc) */}
       <article className="prose max-w-full text-pretty font-sans leading-relaxed text-foreground dark:prose-invert">
