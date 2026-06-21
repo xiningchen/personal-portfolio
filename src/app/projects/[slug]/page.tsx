@@ -90,7 +90,7 @@ export default async function ProjectPage({
       {/* Back to home */}
       <div className="flex justify-start gap-4 items-center">
         <Link
-          href="/"
+          href="/#projects"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors border border-border rounded-lg px-2 py-1 inline-flex items-center gap-1 mb-6 group"
           aria-label="Back to Home"
         >
@@ -105,6 +105,33 @@ export default async function ProjectPage({
           {project.title}
         </h1>
       </div>
+
+      {/* Project meta */}
+      {(project.projectType || project.role || project.company) && (
+        <div className="flex flex-wrap gap-y-1 mt-2 items-center">
+          {project.projectType && (
+            <span className="text-sm text-muted-foreground">
+              {project.projectType}
+            </span>
+          )}
+          {project.role && (
+            <>
+              <span className="text-sm text-muted-foreground mx-2">·</span>
+              <span className="text-sm text-muted-foreground">
+                {project.role}
+              </span>
+            </>
+          )}
+          {project.company && (
+            <>
+              <span className="text-sm text-muted-foreground mx-2">·</span>
+              <span className="text-sm text-muted-foreground">
+                {project.company}
+              </span>
+            </>
+          )}
+        </div>
+      )}
 
       {/* Divider */}
       <div className="my-6 flex w-full items-center">
@@ -144,7 +171,7 @@ export default async function ProjectPage({
       </div>
 
       {/* MDX body (process steps etc) */}
-      <article className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+      <article className="prose max-w-full text-pretty font-sans leading-relaxed text-foreground dark:prose-invert">
         <MDXContent code={project.mdx} components={mdxComponents} />
       </article>
 

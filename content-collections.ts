@@ -13,9 +13,13 @@ const projects = defineCollection({
     title: z.string(),
     slug: z.string(),
     index: z.number(),
+    projectType: z.string().optional(),
+    role: z.string().optional(),
+    company: z.string().optional(),
     projectDescription: z.string(),
     projectOutcome: z.string(),
     images: z.array(z.string()).optional(),
+    content: z.string(),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {

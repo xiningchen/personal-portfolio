@@ -77,6 +77,7 @@ export default function RootLayout({
                 className="h-full w-full"
                 squareSize={2}
                 gridGap={2}
+                color="#9a60db"
                 style={{
                   maskImage: "linear-gradient(to bottom, black, transparent)",
                   WebkitMaskImage:

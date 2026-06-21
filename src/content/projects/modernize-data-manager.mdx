@@ -1,29 +1,36 @@
 ---
-title: "Modernizing a Data Manager"
+title: "Enterprise Data Manager"
 slug: "data-manager"
 index: 1
 projectType: "Professional"
 role: "Lead Developer"
 company: "Tandem Studios"
 url: ""
-projectDescription: "A brief description of what this project is and the problem it solves."
-projectOutcome: "What was achieved, the impact, and measurable results."
+projectDescription: "The client relied on a 25-year-old legacy data management system built on an outdated and fragmented technology stack. Over time, the system had accumulated technical debt, inconsistent data structures, and embedded business logic that made it difficult to maintain, scale, or modernize. The objective was to redesign and rebuild the platform using a modern, secure architecture while migrating over two decades of data; all with minimal disruption to ongoing business operations."
+projectOutcome: "The new platform successfully launched in February 2026 with over 25 years of data securely migrated into a modernized tech stack. The system now operates on a scalable, maintainable architecture that supports long-term growth and improved data governance. Following the rebuild, the team was able to restart a previously stalled assessment initiative that had been attempted several years earlier but was never successfully completed. After the new platform launch, this initiative was revisited, completed, and fully integrated into the application within a one-month timeframe."
 images:
-  - /project-assets/your-project/pic1.png
-  - /project-assets/your-project/pic2.png
-  - /project-assets/your-project/pic3.png
+  - /project-assets/enterprise-data-manager/pic1.png
+  - /project-assets/enterprise-data-manager/pic2.png
+  - /project-assets/enterprise-data-manager/pic3.png
 ---
 
 ## Process
 
-### Step One Title
+### System Architecture & Implementation
 
-Description of this process step...
+The backend API was structured using a Vertical Slice Architecture with MediatR, organizing the application around business capabilities rather than technical layers. This approach improved maintainability, reduced coupling between features, and allowed new functionality to be developed independently as the platform evolved. One of the primary business requirements was to support multiple organizations within a single application while ensuring strict separation of client data. To satisfy this requirement, I implemented a multi-tenant authorization model that enforced data boundaries during the authorization pipeline, ensuring users could only access resources belonging to their organization. The platform also needed to support assessment participants who do not require user accounts. I designed a secure token-based workflow that enabled anonymous users to complete assessments through unique links while allowing administrators to control whether assessments could be distributed externally. In addition, the system generates complex reports with dynamic narratives based on test scores. I collaborated with stakeholders to validate historical reporting logic and implemented a consistent, testable rules set with unit tests to ensure reporting accuracy.
 
-### Step Two Title
+### Data Migration
 
-Description of this process step...
+A major component of this initiative was designing and implementing a repeatable data migration pipeline to migrate legacy data. The legacy system contained over 25 years of data stored in a MySQL database whose schema had evolved over time without normalization principles or relational constraints. As part of the modernization effort, I designed a new Azure SQL database with a normalized schema that better supported scalability, maintainability, and long-term business growth. For the migration, I built a series of Azure Data Factory pipelines that copied legacy data into staging tables within Azure SQL. From there, I developed data flows that joined, transformed, cleansed, and remapped the data into the new relational schema while preserving data integrity and enforcing referential constraints.
 
-### Step Three Title
+Because existing system users transitioned to the new platform on different timelines, the migration process needed to support multiple production migrations rather than a single cutover date. To accommodate this, I maintained the staging tables that preserved mappings between legacy identifiers and newly generated GUIDs, allowing subsequent migrations to be performed safely and consistently without duplicating data or breaking relationships.
 
-Description of this process step...
+The migration strategy was executed for two different production environments, each followed by validation and a controlled rollout. All migrations were completed successfully with minimal disruption to ongoing business operations.
+
+### Project Highlights
+
+- Rebuilt a 25-year-old legacy platform using a modern tech stack.
+- Migrated over 25 years of business data into a normalized and scalable database design.
+- Implemented multi-tenant authorization and secure token-based assessment workflows.
+- Enabled the successful launch of a previously stalled assessment initiative on the new application.

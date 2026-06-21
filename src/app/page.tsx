@@ -53,7 +53,8 @@ export default function Page() {
           </BlurFade>
         </div>
         <div className="flex justify-end">
-          <a href="/resume.pdf"
+          <a
+            href="/resume.pdf"
             download="Xining Schmidt-Chen Resume.pdf"
             className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-5 h-10 text-sm font-medium shadow-md hover:shadow-lg hover:bg-primary/20 transition-all duration-200"
           >
@@ -61,7 +62,6 @@ export default function Page() {
             Resume
           </a>
         </div>
-
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-6">
