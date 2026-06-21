@@ -233,7 +233,13 @@ export const DATA = {
       location: "",
       description: "",
       image: "",
-      links: [],
+      links: [
+        {
+          href: "",
+          icon: "",
+          title: "",
+        },
+      ],
     },
   ],
 } as const;
