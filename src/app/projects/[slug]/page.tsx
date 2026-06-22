@@ -148,6 +148,27 @@ export default async function ProjectPage({
         />
       </div>
 
+      {/* Project Highlight */}
+      <div className="my-8">
+        <h2 className="text-xl font-semibold tracking-tight mb-2">
+          Project Highlight
+        </h2>
+        <div className="prose">
+          <ul className="list-disc pl-6 text-[var(--foreground)]">
+            {project.projectHighlight.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Image carousel */}
+      {project.images && project.images.length > 0 && (
+        <div className="my-8">
+          <EmblaCarousel slides={project.images} />
+        </div>
+      )}
+
       {/* Project description */}
       <div className="my-8">
         <h2 className="text-xl font-semibold tracking-tight mb-2">
@@ -165,13 +186,6 @@ export default async function ProjectPage({
           {project.projectOutcome}
         </p>
       </div>
-
-      {/* Image carousel */}
-      {project.images && project.images.length > 0 && (
-        <div className="my-8">
-          <EmblaCarousel slides={project.images} />
-        </div>
-      )}
 
       {/* MDX body (process steps etc) */}
       <article className="prose max-w-full text-pretty font-sans leading-relaxed text-foreground dark:prose-invert">

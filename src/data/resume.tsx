@@ -18,9 +18,9 @@ export const DATA = {
   location: "Portland, OR",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "My friends call me Shining and I love learning new things. I have a derpy puppy (Cornflake) and a gremlin kitty cat (Ruby).",
+    "My friends call me Shining and I'm passionate about turning complex problems into practical solutions.",
   summary:
-    "I got my master's degree in Computer Science in 2024 with a thesis on [detecting brain vulnerability using network neuroscience](https://hdl.handle.net/1880/120335). During my master's, I created a [mini python library](https://github.com/xiningchen/Towlson-Group-Code) for efficiently analyzing large brain images. Since graduating, I've been working at [Tandem Studios](https://www.tandemstudios.ca/) as a full-stack web application developer.",
+    "I got my master's degree in Computer Science in 2024 with a thesis on [detecting brain vulnerability using network neuroscience](https://hdl.handle.net/1880/120335). During my master's, I created a [mini python library](https://github.com/xiningchen/Towlson-Group-Code) for efficiently analyzing large brain images. Since graduating, I've been working at [Tandem Studios](https://www.tandemstudios.ca/) as a full-stack developer, building enterprise-grade web applications.",
   avatarUrl: "/me.jpg",
   // Current job/active work stack.
   primarySkills: [
