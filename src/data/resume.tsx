@@ -18,7 +18,7 @@ export const DATA = {
   location: "Portland, OR",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Full-stack Web Application Developer. I love learning and I have a fluffy puppy (Cornflake) and a fluffy cat (Ruby).",
+    "My friends call me Shining and I love learning new things. I have a derpy puppy (Cornflake) and a gremlin kitty cat (Ruby).",
   summary:
     "I got my master's degree in Computer Science in 2024 with a thesis on [detecting brain vulnerability using network neuroscience](https://hdl.handle.net/1880/120335). During my master's, I created a [mini python library](https://github.com/xiningchen/Towlson-Group-Code) for efficiently analyzing large brain images. Since graduating, I've been working at [Tandem Studios](https://www.tandemstudios.ca/) as a full-stack web application developer.",
   avatarUrl: "/me.jpg",
