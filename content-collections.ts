@@ -18,8 +18,6 @@ const projects = defineCollection({
     role: z.string().optional(),
     company: z.string().optional(),
     projectHighlight: z.array(z.string()),
-    projectDescription: z.string(),
-    projectOutcome: z.string(),
     images: z.array(z.string()).optional(),
     content: z.string(),
   }),

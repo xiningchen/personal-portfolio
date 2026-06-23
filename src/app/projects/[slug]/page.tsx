@@ -23,6 +23,7 @@ export async function generateStaticParams() {
   return allProjects.map((p) => ({ slug: p.slug }));
 }
 
+// Reserved function name in Next.js and gets called automatically to generate metadata.
 export async function generateMetadata({
   params,
 }: {
@@ -35,17 +36,26 @@ export async function generateMetadata({
 
   return {
     title: project.title,
-    description: project.projectDescription,
+    description: project.projectHighlight[0],
     openGraph: {
       title: project.title,
-      description: project.projectDescription,
+      description: project.projectHighlight[0],
       type: "article",
       url: `${DATA.url}/projects/${slug}`,
+      images: [
+        {
+          url: `${DATA.url}${project.images?.[0]}`,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
-      description: project.projectDescription,
+      description: project.projectHighlight[0],
+      images: [`${DATA.url}${project.images?.[0]}`],
     },
   };
 }
@@ -73,7 +83,7 @@ export default async function ProjectPage({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: project.title,
-    description: project.projectDescription,
+    description: project.projectHighlight[0],
     url: `${DATA.url}/projects/${slug}`,
     author: {
       "@type": "Person",
@@ -168,24 +178,6 @@ export default async function ProjectPage({
           <EmblaCarousel slides={project.images} />
         </div>
       )}
-
-      {/* Project description */}
-      <div className="my-8">
-        <h2 className="text-xl font-semibold tracking-tight mb-2">
-          Project Context
-        </h2>
-        <p className="text-foreground text-pretty leading-relaxed">
-          {project.projectDescription}
-        </p>
-      </div>
-
-      {/* Project outcome */}
-      <div className="my-8">
-        <h2 className="text-xl font-semibold tracking-tight mb-2">Outcome</h2>
-        <p className="text-foreground text-pretty leading-relaxed">
-          {project.projectOutcome}
-        </p>
-      </div>
 
       {/* MDX body (process steps etc) */}
       <article className="prose max-w-full text-pretty font-sans leading-relaxed text-foreground dark:prose-invert">

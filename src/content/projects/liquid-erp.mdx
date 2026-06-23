@@ -8,10 +8,12 @@ role: "Contract Engagement"
 company: "Tandem Studios"
 url: ""
 projectHighlight: []
-projectDescription: "Liquid's ERP platform is a large, business critical web app that had been built and maintained by a single developer for 6 to 7 years. As a contractor through Tandem Studios, I was brought in periodically in 2024 to help during busy periods, starting with small dev tasks and growing into ownership of larger features as I learned the system. In 2026, Liquid asked me to rejoin by name to help prepare the platform for a critical beta launch with a new stakeholder."
-projectOutcome: 'In my first engagement, I worked closely with the lead developer to build two long requested features: a notification system and a dashboard that had been "coming soon" for years. When I rejoined the project, I worked largely independently to resolve outstanding issues and ship critical functionalities ahead of a major stakeholder launch, helping get the platform ready on a tight timeline.'
 images: []
 ---
+
+## Context
+
+Liquid's ERP platform is a large, business critical web app that had been built and maintained by a single developer for 6 to 7 years. As a contractor through Tandem Studios, I was brought in periodically in 2024 to help during busy periods, starting with small dev tasks and growing into ownership of larger features as I learned the system. In 2026, Liquid asked me to rejoin by name to help prepare the platform for a critical beta launch with a new stakeholder.
 
 ## Process
 
@@ -26,3 +28,7 @@ The dashboard used Kendo grids as the building blocks, with each grid treated as
 During my second engagement, the team was working against a tight deadline to support Liquid's largest stakeholder yet, which required a new payment tracking feature the platform didn't previously support. Payments needed to support multiple methods, including custom payment methods that users could define themselves in the future. The fastest path forward was a simpler, fixed schema, but that would have made it harder to support custom payment methods down the line. I designed an alternative schema that supported extensible, user-defined payment methods without anticipated future migrations, and proposed it to the CTO. He liked the approach and gave me ownership of the implementation.
 
 Another major task was introducing proper tenancy around offices. Offices had never been cleanly modeled in the system, and a key requirement for the new stakeholder was limiting what data a user could see based on their office assignment. This touched a large portion of the platform, since office relationships were referenced throughout the majority of existing features. The work wasn't conceptually difficult, but it required care, since incomplete or inconsistent changes could easily expose data across offices that shouldn't be visible. I built the access logic as a service that could be plugged into existing pages, which kept the change centralized and minimized the amount of refactoring needed. Alongside these larger initiatives, I also built new reports, fixed UI issues, and resolved various bugs across the platform.
+
+## Outcome
+
+In my first engagement, I worked closely with the lead developer to build two long requested features: a notification system and a dashboard that had been "coming soon" for years. When I rejoined the project, I worked largely independently to resolve outstanding issues and ship critical functionalities ahead of a major stakeholder launch, helping get the platform ready on a tight timeline.

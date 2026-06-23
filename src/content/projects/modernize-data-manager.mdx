@@ -12,8 +12,6 @@ projectHighlight:
   - Migrated over 25 years of business data into a normalized and scalable database design.
   - Implemented multi-tenant authorization and secure token-based assessment workflows.
   - Enabled the successful launch of a previously stalled assessment initiative on the new application.
-projectDescription: "The client relied on a 25-year-old legacy data management system built on an outdated and fragmented technology stack. Over time, the system had accumulated technical debt, inconsistent data structures, and embedded business logic that made it difficult to maintain, scale, or modernize. The objective was to redesign and rebuild the platform using a modern, secure architecture while migrating over two decades of data; all with minimal disruption to ongoing business operations."
-projectOutcome: "The new platform successfully launched in February 2026 with over 25 years of data securely migrated into a modernized tech stack. The system now operates on a scalable, maintainable architecture that supports long-term growth and improved data governance. Following the rebuild, the team was able to restart a previously stalled assessment initiative that had been attempted several years earlier but was never successfully completed. After the new platform launch, this initiative was revisited, completed, and fully integrated into the application within a one-month timeframe."
 images:
   - /project-assets/enterprise-data-manager/assessment_workflow.png
   - /project-assets/enterprise-data-manager/phone_report.png
@@ -23,6 +21,10 @@ images:
   - /project-assets/enterprise-data-manager/finance_example.png
   - /project-assets/enterprise-data-manager/product_summary.png
 ---
+
+## Context
+
+The client relied on a 25-year-old legacy data management system built on an outdated and fragmented technology stack. Over time, the system had accumulated technical debt, inconsistent data structures, and embedded business logic that made it difficult to maintain, scale, or modernize. The objective was to redesign and rebuild the platform using a modern, secure architecture while migrating over two decades of data; all with minimal disruption to ongoing business operations.
 
 ## Process
 
@@ -37,3 +39,7 @@ A major component of this initiative was designing and implementing a repeatable
 Because existing system users transitioned to the new platform on different timelines, the migration process needed to support multiple production migrations rather than a single cutover date. To accommodate this, I maintained the staging tables that preserved mappings between legacy identifiers and newly generated GUIDs, allowing subsequent migrations to be performed safely and consistently without duplicating data or breaking relationships.
 
 The migration strategy was executed for two different production environments, each followed by validation and a controlled rollout. All migrations were completed successfully with minimal disruption to ongoing business operations.
+
+## Outcome
+
+The new platform successfully launched in February 2026 with over 25 years of data securely migrated into a modernized tech stack. The system now operates on a scalable, maintainable architecture that supports long-term growth and improved data governance. Following the rebuild, the team was able to restart a previously stalled assessment initiative that had been attempted several years earlier but was never successfully completed. After the new platform launch, this initiative was revisited, completed, and fully integrated into the application within a one-month timeframe.
