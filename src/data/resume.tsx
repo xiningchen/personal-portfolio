@@ -163,7 +163,7 @@ export const DATA = {
       title: "Liquid Software",
       slug: "liquid",
       dates: "Sep 2024 - Present",
-      active: false,
+      active: true,
       description:
         "Feature development on a large-scale ERP platform for a multi-year contracting engagement.",
       technologies: [
@@ -180,7 +180,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/project-assets/liquid-erp/liquid-card.png",
       video: "",
     },
     {

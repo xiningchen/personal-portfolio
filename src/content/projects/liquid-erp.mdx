@@ -1,14 +1,22 @@
 ---
-active: false
+active: true
 title: "Liquid Software - ERP System"
 slug: "liquid"
 index: 2
 projectType: "Professional"
 role: "Contract Engagement"
 company: "Tandem Studios"
-url: ""
-projectHighlight: []
-images: []
+projectHighlight:
+  - Re-engaged by the client by name to help prepare a business-critical ERP platform for its largest stakeholder launch to date.
+  - Delivered multiple major platform features, including payments tracking, dashboard, notifications, customer portal, and internal time tracking.
+  - Owned and shipped key functionality under tight deadlines.
+images:
+  - /project-assets/liquid-erp/liquid-payments.png
+  - /project-assets/liquid-erp/liquid-customer-portal.png
+  - /project-assets/liquid-erp/liquid-report.png
+  - /project-assets/liquid-erp/liquid-time-tracking.png
+  - /project-assets/liquid-erp/liquid-dashboard-notification.png
+  - /project-assets/liquid-erp/liquid-dashboard-setting.png
 ---
 
 ## Context
@@ -22,6 +30,8 @@ Liquid's ERP platform is a large, business critical web app that had been built 
 The platform had gone years without in-app notifications or a dashboard, both of which the team had wanted to build but never had the bandwidth for. For notifications, I initially proposed WebSockets, but the CTO had previously run into reliability issues implementing WebSockets with Razor Pages on ASP.NET 6, so we went with a polling approach instead. I built this as a backend service that could be used in any controller to queue notifications, paired with a frontend View Component for polling and rendering.
 
 The dashboard used Kendo grids as the building blocks, with each grid treated as a self-contained widget. The real design problem was configuration: Liquid is used by people across very different roles, from order placement to fulfillment to invoicing, and no single user needs to see everything. I implemented a flag enum to define default widget visibility per role, paired with a per-user configuration (including widget ordering) so each person could customize their dashboard to show only what was relevant to them.
+
+In addition to these larger platform initiatives, I also developed several standalone modules. One was a customer portal that allowed customers to track project progress and manage project-related information. Another was a time tracking system for internal staff, enabling project hours to be recorded and managed directly within the ERP. These features were implemented as complete end-to-end workflows, including database changes, backend logic, and user-facing pages.
 
 ### Leading Key Features for the Stakeholder Launch
 
