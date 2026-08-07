@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
@@ -56,6 +57,8 @@ export const metadata: Metadata = {
   },
 };
 
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,6 +95,9 @@ export default function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
       </body>
+      {process.env.NODE_ENV === "production" && gaId ? (
+        <GoogleAnalytics gaId={gaId} />
+      ) : null}
     </html>
   );
 }

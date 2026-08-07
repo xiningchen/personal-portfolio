@@ -14,9 +14,9 @@ import { RxJS } from "@/components/ui/svgs/rxjs";
 export const DATA = {
   name: "Xining Schmidt-Chen",
   initials: "XC",
-  url: "https://dillion.io",
+  url: "https://www.shiningxchen.com",
   location: "Portland, OR",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  locationLink: "https://www.google.com/maps/place/Portland,+OR",
   description:
     "My friends call me Shining and I'm passionate about turning complex problems into practical solutions.",
   summary:
