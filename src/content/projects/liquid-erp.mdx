@@ -7,9 +7,11 @@ projectType: "Professional"
 role: "Contract Engagement"
 company: "Tandem Studios"
 projectHighlight:
+  - Identified and led a platform-wide standardization of date and time handling, a long-standing architectural issue spanning nearly every business area of the application.
+  - Delivered a time zone selector for reporting, a capability the team had wanted for over two years.
+  - Replaced the platform's browser-native alerts with a reusable toast notification system, resolving a standing source of user confusion.
   - Re-engaged by the client by name to help prepare a business-critical ERP platform for its largest stakeholder launch to date.
-  - Delivered multiple major platform features, including payments tracking, dashboard, notifications, customer portal, and internal time tracking.
-  - Owned and shipped key functionality under tight deadlines.
+  - Owned and shipped major features end to end, including payments tracking, office-level tenancy, dynamic PDF creation, dashboard, notifications, customer portal, time tracking, and others.
 images:
   - /project-assets/liquid-erp/liquid-payments.png
   - /project-assets/liquid-erp/liquid-customer-portal.png
@@ -17,28 +19,42 @@ images:
   - /project-assets/liquid-erp/liquid-time-tracking.png
   - /project-assets/liquid-erp/liquid-dashboard-notification.png
   - /project-assets/liquid-erp/liquid-dashboard-setting.png
+  - /project-assets/liquid-erp/liquid-quick-create.png
+  - /project-assets/liquid-erp/liquid-timezone-closed.png
+  - /project-assets/liquid-erp/liquid-timezone-open.png
+  - /project-assets/liquid-erp/liquid-dynamic-pdfs.png
 ---
 
 ## Context
 
 Liquid's ERP platform is a large, business critical web app that had been built and maintained by a single developer for 6 to 7 years. As a contractor through Tandem Studios, I was brought in periodically in 2024 to help during busy periods, starting with small dev tasks and growing into ownership of larger features as I learned the system. In 2026, Liquid asked me to rejoin by name to help prepare the platform for a critical beta launch with a new stakeholder.
 
-## Process
+## Standardizing Date and Time Handling Across the Platform
 
-### Building Out Long-Requested Features
+I was initially brought in to fix inconsistent date displays on throughout multiple areas of the application. While working through the first few, the pattern didn't look like a pure display problem at the view layer. I stepped back and audited how dates and times were stored, converted, and rendered across the entire system.
 
-The platform had gone years without in-app notifications or a dashboard, both of which the team had wanted to build but never had the bandwidth for. For notifications, I initially proposed WebSockets, but the CTO had previously run into reliability issues implementing WebSockets with Razor Pages on ASP.NET 6, so we went with a polling approach instead. I built this as a backend service that could be used in any controller to queue notifications, paired with a frontend View Component for polling and rendering.
+What I found was the kind of drift due to missing standard and convention between using UTC versus local, conversions applied at different layers depending on when the feature was written, and several helper extensions. Almost every business area involved Date and Time data it in some way. I documented the findings and brought them to the development team with concrete examples, and proposed that we address the underlying handling rather than continue patching individual pages. I was upfront that this meant a significant block of development time, careful incremental work, and a heavy QA pass. It was agreed that investing in this fix was the right call.
 
-The dashboard used Kendo grids as the building blocks, with each grid treated as a self-contained widget. The real design problem was configuration: Liquid is used by people across very different roles, from order placement to fulfillment to invoicing, and no single user needs to see everything. I implemented a flag enum to define default widget visibility per role, paired with a per-user configuration (including widget ordering) so each person could customize their dashboard to show only what was relevant to them.
+I researched date and time practices used in ERP systems, mapped them against how the platform actually behaved, and worked through the trade-offs with the CTO before writing a refactoring plan. Over the next two to three weeks I worked through the codebase one business area at a time, consolidating conversion logic, standardizing naming, and rewriting the extension methods against a single convention. I used AI tooling heavily to propagate consistent changes across each business area, carefully reviewing all code changes. Alongside the refactor I wrote up the conventions as documentation, so the team has something to build against going forward.
 
-In addition to these larger platform initiatives, I also developed several standalone modules. One was a customer portal that allowed customers to track project progress and manage project-related information. Another was a time tracking system for internal staff, enabling project hours to be recorded and managed directly within the ERP. These features were implemented as complete end-to-end workflows, including database changes, backend logic, and user-facing pages.
+The reporting area of the application got its own additional changes. I first standardized reports to consistently render in the user's local browser time zone, then built a time zone selector so users can view report data in any time zone rather than being locked to their browser timezone, a request the team had carried for over two years. The business team validated the full refactoring work across the whole system, and the update is shipping to all of Liquid's clients.
 
-### Leading Key Features for the Stakeholder Launch
+## Treating UX as Engineering Work
 
-During my second engagement, the team was working against a tight deadline to support Liquid's largest stakeholder yet, which required a new payment tracking feature the platform didn't previously support. Payments needed to support multiple methods, including custom payment methods that users could define themselves in the future. The fastest path forward was a simpler, fixed schema, but that would have made it harder to support custom payment methods down the line. I designed an alternative schema that supported extensible, user-defined payment methods without anticipated future migrations, and proposed it to the CTO. He liked the approach and gave me ownership of the implementation.
+The platform relied on the browser's native alert dialog to communicate with users, including for routine confirmations. Users found this alarming, and the business team was receiving calls from people who weren't sure whether they'd done something wrong or what they were supposed to do next. When this came up in a meeting, I suggested a toast notification system. It wasn't a pattern the team was familiar with, so I walked through what it would look like and what it would take, then took ownership of the work. I built the toast system as a reusable component that could be dropped into any page, then went through the existing codebase and migrated every alert call over to it. The result gave the platform a consistent, non-blocking way to surface confirmations, warnings, and errors. The internal team's reaction to the finished implementation was enthusiastic, and the user complaints stopped.
 
-Another major task was introducing proper tenancy around offices. Offices had never been cleanly modeled in the system, and a key requirement for the new stakeholder was limiting what data a user could see based on their office assignment. This touched a large portion of the platform, since office relationships were referenced throughout the majority of existing features. The work wasn't conceptually difficult, but it required care, since incomplete or inconsistent changes could easily expose data across offices that shouldn't be visible. I built the access logic as a service that could be plugged into existing pages, which kept the change centralized and minimized the amount of refactoring needed. Alongside these larger initiatives, I also built new reports, fixed UI issues, and resolved various bugs across the platform.
+The same thinking shaped a feature I built for a stakeholder launch: a streamlined workflow for creating multiple orders at once, aimed at users transitioning off a manual paper process. During scoping, several additional features were proposed for the page that I believed would hurt adoption. These were users moving off pen and paper, and each additional option on the screen was another unfamiliar decision to make while they adjusted to doing the job digitally. Rather than push back flatly, I asked the business team what problem each addition was meant to solve, and made the case for shipping the simplest version. If users adopted it and asked for more, adding to it later would be straightforward, whereas recovering from a confusing first impression would not. We agreed to start simple. After the feature reached QA and went live, it was received well both internally and by Liquid's clients.
+
+Both of these sit close to how I think about engineering generally. Backend correctness matters, but many of the problems that reach the support team or a developer's desk aren't bugs at all. It is users being confused or making avoidable mistakes because the interface didn't guide them well. As a full-stack developer, I treat frontend decisions as engineering work, driven by intention and UX considerations. I'm willing to spend the extra time on those decisions, and to argue for restraint when it's warranted, because a positive user experience builds trust in the system.
+
+## Owning Features End to End
+
+Across both engagements I owned a number of end to end features. In my first engagement, the platform had gone years without in-app notifications or a dashboard, both of which the team had wanted to build but never had the bandwidth for. For notifications I initially proposed WebSockets, but the CTO had previously hit reliability issues with WebSockets on Razor Pages and ASP.NET 6, so we went with polling: a backend service any controller could use to queue notifications, paired with a frontend View Component to poll and render. The dashboard was built from Kendo grids treated as self-contained widgets, where the real design problem was configuration rather than display. Liquid serves people across very different roles, from order placement to fulfillment to invoicing, so not everyone needs to see everything. I used a flag enum for default widget visibility per role, layered with per-user configuration and ordering.
+
+During the second engagement, supporting Liquid's largest stakeholder required payment tracking the platform didn't have. Payments needed to handle multiple methods, including custom methods users could define themselves later. The fastest path was a fixed schema, but that would have forced a migration as soon as custom methods were needed. I designed an extensible schema that supported user-defined payment methods without anticipated future migrations, proposed it to the CTO, and owned the implementation.
+
+The same launch required proper tenancy around offices, which had never been cleanly modeled. Users needed to be limited to data belonging to their assigned office, and office relationships were referenced across the majority of existing features. The work wasn't conceptually difficult, but it required careful changes, since incomplete or inconsistent changes could easily expose data across office boundaries. I built the access logic as a service that plugged into existing pages, keeping the change centralized rather than scattering it. I also built a customer portal for tracking project progress and an internal time tracking system, both as complete end-to-end workflows, along with new reports and a range of smaller fixes.
 
 ## Outcome
 
-In my first engagement, I worked closely with the lead developer to build two long requested features: a notification system and a dashboard that had been "coming soon" for years. When I rejoined the project, I worked largely independently to resolve outstanding issues and ship critical functionalities ahead of a major stakeholder launch, helping get the platform ready on a tight timeline.
+Liquid's platform has been in active development for close to seven years and continues to grow as a custom ERP solution for the business. In my first engagement I built two features that had been "coming soon" for years. In my second engagement, I worked largely independently to ship functionalities for a major stakeholder launch, then took on a platform-wide date and time standardization effort, a long-standing pain point that had been patched in places but not fully addressed. I continue to work with Liquid on new development and long-standing issues across the platform.
