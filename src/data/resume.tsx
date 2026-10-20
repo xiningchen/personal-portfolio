@@ -64,6 +64,17 @@ export const DATA = {
     },
   },
   work: [
+    // {
+    //   company: "Pacific Power",
+    //   href: "https://www.pacificpower.net/",
+    //   badges: [],
+    //   location: "Portland, OR",
+    //   title: "Software Engineer II",
+    //   logoUrl: "/pacific-power-logo.svg",
+    //   start: "November 2026",
+    //   end: "Present",
+    //   description: "",
+    // },
     {
       company: "Tandem Studios",
       href: "https://www.tandemstudios.ca/",
@@ -72,7 +83,7 @@ export const DATA = {
       title: "Full-stack Developer",
       logoUrl: "/work_in_tandem_logo.jpg",
       start: "October 2023",
-      end: "Present",
+      end: "October 2026",
       description:
         "At Tandem Studios, I develop and maintain full-stack web applications using ASP.NET, Angular, Razor Pages, EF Core, SQL Server, and Azure. I lead the development of a legacy system from architecture through production deployment while also building new features for a mature enterprise application, giving me experience in both end-to-end product development and enhancing complex existing systems.",
     },
